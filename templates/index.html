@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Graph</title>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="import-container">
+        <h1>Input Data</h1>
+        <p> <b>Note: </b> Data must be a list of numbers seperated by commas or spaces or tabs.</p>
+        <form action="/" method="post" class="import-form">
+            <!-- <input type="file" name="data" id="data-file"> -->
+            <textarea name="data" id="data" cols="30" rows="10" placeholder="Input data here..."
+                class="data-input-textarea"></textarea>
+            <button type="submit" class="submit-btn">Plot</button>
+        </form>
+    </div>
+    <div class="graph-container">
+        <img src="{{ graph }}" alt="graph" />
+    </div>
+</div>
+{% endblock %}
