@@ -14,15 +14,20 @@ def index():
     seperators = [" ", ", ", ",", "\t"]
     if request.method == "POST":
         data = request.form["data"]
+        try:
+            interval = float(request.form["class-interval"])
+        except:
+            interval = None  # defaul value
+
         for sep in seperators:
             if sep in data:
                 datalist = data.split(sep)
                 print(datalist)
 
-        graph = histogram(datalist)
+        graph = histogram(datalist, interval=interval)
     else:
         graph = histogram(list=np.random.uniform(0, 10, 50))
-    return render_template("index.html", graph=graph)
+    return render_template("index.html", graph=graph, data=data, interval=interval)
 
 
 if __name__ == "__main__":
