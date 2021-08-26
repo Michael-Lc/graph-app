@@ -10,6 +10,17 @@
         <h1>Input Data</h1>
         <p> <b>Note: </b> Data must be a list of numbers seperated by <b>commas</b> or <b>spaces</b> or <b>tabs</b>.
         </p>
+        {% if error|length > 0 %}
+        <!-- The Modal -->
+        <div id="error-modal" class="error-modal">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h3>{{error}}</h3>
+                    <!-- <span id="closeBtn" class="close">&times;</span> -->
+                </div>
+            </div>
+        </div>
+        {% endif %}
         <form action="/" method="post" class="import-form">
             <!-- <input type="file" name="data" id="data-file"> -->
             <div class="form-group">
@@ -23,7 +34,8 @@
             </div>
             <div class="form-group">
                 <label for="title" class="form-label">Title: </label>
-                <input type="text" value="{{ data['title'] }}" class="form-control" name="title" id="title">
+                <input type="text" value="{{ data['graph-title'] }}" class="form-control" name="graph-title"
+                    id="graph-title">
             </div>
             <div class="form-group">
                 <label for="xlabel" class="form-label">X-label: </label>
@@ -49,4 +61,6 @@
         <img class="graph" src="{{ graph }}" alt="graph" />
     </div>
 </div>
+
+<script src="{{ url_for('static', filename='js/index.js') }}"></script>
 {% endblock %}

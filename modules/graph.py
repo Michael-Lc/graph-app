@@ -27,7 +27,7 @@ def histogram(list, interval=None, args=[]):
     if len(args) != 0:
         ax.set_xlabel(args["xlabel"])
         ax.set_ylabel(args["ylabel"])
-        fig.suptitle(args["title"])
+        fig.suptitle(args["graph-title"])
         if args["graph_color"] != "":
             color = args["graph_color"]
 

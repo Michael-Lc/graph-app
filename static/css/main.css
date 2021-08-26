@@ -93,6 +93,57 @@ body {
   background-color: #83c402;
 }
 
+/* Modal */
+.error-modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: rgba(224, 192, 192, 0);
+}
+
+/* Modal Body */
+.modal-body {
+  padding: 7px 7px;
+  display: flex;
+  text-align: center;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  top: 5px;
+  margin: 0;
+  padding: 0;
+  width: 20rem;
+  min-width: 20rem;
+  max-width: 25rem;
+  color: #fff;
+  border: 1px solid #888;
+  animation-duration: 0.4s;
+  animation-name: animatetop;
+  background-color: rgb(218, 4, 4);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Add Animation */
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 5px;
+    opacity: 1;
+  }
+}
+
 /* REMOVING ARROWS/SPINNERS ON NUMBER FIELD */
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
