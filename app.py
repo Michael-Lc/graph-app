@@ -18,7 +18,7 @@ def index():
             return returnError("data-error", data=request.form)
 
         seperators = [" ", ", ", ",", "\t"]  # list of data seperators
-        data = data.strip()
+        data = data.strip(", ")
         print(request.form)
 
         # Cast class interval to float
@@ -46,6 +46,17 @@ def index():
         )  # Default random graph values
         return render_template("index.html", graph=graph, data=data, error="")
 
+@app.after_request
+def add_header(r):
+    """
+    Add headers to both force latest IE rendering engine or Chrome Frame,
+    and also to cache the rendered page for 10 minutes.
+    """
+    r.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+    r.headers["Pragma"] = "no-cache"
+    r.headers["Expires"] = "0"
+    r.headers["Cache-Control"] = 'public, max-age=0'
+    return r
 
 if __name__ == "__main__":
     app.run(debug=True)
