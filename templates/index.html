@@ -21,7 +21,7 @@
             </div>
         </div>
         {% endif %}
-        <form action="/" method="post" class="import-form">
+        <form action="/" method="post" class="import-form" id="import-form">
             <!-- <input type="file" name="data" id="data-file"> -->
             <div class="form-group">
                 <textarea name="data" id="data" cols="30" rows="10" placeholder="Input data here..."
@@ -53,6 +53,7 @@
             <!-- <div class="form-group form-grid">
                 </div> -->
             <div class="form-group">
+                <button type="button" onclick="clearForm()" class="submit-btn clear-btn">Clear</button>
                 <button type="submit" class="submit-btn">Plot</button>
             </div>
         </form>

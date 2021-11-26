@@ -4,6 +4,14 @@ function submitform(event) {
   return false;
 }
 
+function clearForm() {
+  const elements = document.getElementsByClassName("form-control")
+
+  for (const el of elements) {
+    el.value = ""
+  }
+}
+
 // Get the modal
 const modal = document.getElementById("error-modal");
 
